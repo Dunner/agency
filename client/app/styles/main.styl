@@ -1,0 +1,137 @@
+
+//
+// Typographic
+//
+
+presets(minor-second)
+
+html
+  font-family 'Open Sans', sans-serif
+  font-size 12px
+  @media (min-width 600px)
+    font-size 14px
+  @media (min-width 800px)
+    font-size 16px
+  @media (min-width 1000px)
+    font-size 18px
+
+t-headers('Open Sans')
+
+.center
+  text-align center
+
+//
+// Other
+//
+
+*
+  margin 0
+  padding 0
+  box-sizing border-box
+  position relative
+
+
+body, html
+  margin 0
+  padding 0
+  width 100%
+  height 100%
+  position relative
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html
+  box-sizing border-box
+  overflow auto
+
+*, *:before, *:after
+  box-sizing inherit
+
+ul
+  margin 0px
+
+a
+  text-decoration none
+  color black
+
+
+/* -----
+Columns
+----- */
+
+ul.double
+  width 100%
+  position relative
+  margin-bottom 20px
+  padding 0 20px
+  & li
+    width calc(50% - 10px)
+    float left
+    position relative
+    margin-left 20px
+    overflow hidden
+    &:first-child
+      margin-left 0px
+  &:after
+    content ''
+    display block
+    clear both
+
+ul.tripple
+  width 100%
+  position relative
+  margin-bottom 20px
+  padding 0 20px
+  & li
+    width calc(33.333% - 20px)
+    float left
+    position relative
+    margin-left 20px
+    overflow hidden
+    &:first-child
+      width 33.333%
+      margin-left 0px
+  &:after
+    content ''
+    display block
+    clear both
+
+.row::after
+  display block
+  content ''
+  clear both
+
+.cursor 
+  cursor pointer
+
+hr
+  border 0
+  height 1px
+  background #ccc
+  width 100%
+  margin 15px 0
+
+hr.prettyline
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+  border 0
+  height 1px
+  position relative
+  margin-top 0.5em 
+  &::before
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+    top -0.5em
+    height 1em
+    content ''
+    position absolute
+    width 100%
+  &::after
+    background #fff
+    content''
+    height 0.5em  /* half the height of before */
+    top 1px       /* height of hr*/
+    content ''
+    position absolute
+    width 100%
+
+.editing
+  outline none
+  
