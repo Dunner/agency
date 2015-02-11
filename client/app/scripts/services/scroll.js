@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc service
- * @name postApp.scroll
+ * @name agencyApp.scroll
  * @description
  * # scroll
- * Service in the postApp.
+ * Service in the agencyApp.
  */
-angular.module('postApp')
+angular.module('agencyApp')
   .service('scroll', function scroll() {
 
     function getElementY(element) {

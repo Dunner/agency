@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name postApp
+ * @name agencyApp
  * @description
- * # postApp
+ * # agencyApp
  *
  * Main module of the application.
  */
 angular
-  .module('postApp', [
+  .module('agencyApp', [
     'ui.router',
     'ngAnimate',
     'ngCookies',

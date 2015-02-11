@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name postApp.controller:listCtrl
+ * @name agencyApp.controller:listCtrl
  * @description
  * # listCtrl
- * Controller of the postApp
+ * Controller of the agencyApp
  */
-angular.module('postApp')
+angular.module('agencyApp')
   .controller('listCtrl', function ($scope, $filter, Posts) {
     
     Posts.query(function(response) {

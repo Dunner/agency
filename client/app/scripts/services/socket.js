@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc service
- * @name postApp.socket
+ * @name agencyApp.socket
  * @description
  * # socket
- * Factory in the postApp.
+ * Factory in the agencyApp.
  */
-angular.module('postApp')
+angular.module('agencyApp')
   .factory('socket', function (socketFactory) {
     return socketFactory();
   });

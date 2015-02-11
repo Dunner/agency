@@ -1,33 +1,65 @@
 .wrapper
-    position relative
+  position relative
+  width 100%
+  height 100%
+  transition width 0.3s
+  &:after
+    content ''
+    display block
+    clear both
+  &.card
+    margin 0 auto
+    width 50%!important
+  .logo
     width 100%
-    height 100%
-    &:after
-        content ''
-        display block
-        clear both
-
-.sidepanel
-    width 20%
-    height 100%
-    float left
-    background #222
-    color #fefefe
-    padding 5px
+    height 200px
+    background #f00
+    transition height 0.3s
+    &.floated
+      float left
+      width 20%
+      height 80px
+  .navigation
     position relative
-    & a
-        color #fefefe
-    & li .button
+    height 80px
+    &.floated
+      float left
+      width 80%
+    nav
+      position relative
+      height 100%
+      &.options
+        position relative
         width 100%
-    
-.maincontent
-    width 80%
-    height 100%
-    float left
-    
-    background #ebe9eb
+        display table
+        height 100%
+        table-layout fixed
+        border-top 1px solid #444
+        border-bottom 1px solid #444
+        & > ul
+          margin 0
+          padding 0
+          display table-row
+          & > li
+            list-style none1
+            cursor pointer
+            text-align center
+            height 100%
+            display table-cell
+            border-right 1px solid #444
+            background #eee
+            &:first-child
+              border-left 1px solid #444
+            & > a
+              display block
+              text-decoration none
+              color black
+              line-height 50px
+            &.active > a
+              color #00f
 
-.listwrap
-    width 100%
-    padding 10px 10px 10px 0
-    height 100%
+.maincontent
+  width 100%
+  height 100%
+  background #ebe9eb
+  

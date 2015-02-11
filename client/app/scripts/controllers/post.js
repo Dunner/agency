@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name postAppApp.controller:postCtrl
+ * @name agencyApp.controller:postCtrl
  * @description
  * # postCtrl
- * Controller of the postApp
+ * Controller of the agencyApp
  */
-angular.module('postApp')
+angular.module('agencyApp')
   .controller('postCtrl', function ($scope, Posts, $filter ) {
     
     $scope.addPost = function() {

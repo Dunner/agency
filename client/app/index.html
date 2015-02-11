@@ -20,16 +20,20 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
   </head>
-  <body ng-app="postApp">
+  <body ng-app="agencyApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="wrapper">
-      <div ng-include src="'views/sidepanel.html'" ng-controller="sidepanelCtrl" class="sidepanel"></div>
-      <div class="maincontent" ui-view=""></div>
+    
+    <div class="wrapper" ng-controller="layoutCtrl" ng-class="{card:card}">
+      <div class="logo"  ng-class="{floated:!card}"></div>
+      <div ng-navigation class="navigation" ng-class="{floated:!card}"></div>
+      <div style="clear:both"></div>
+      <div class="maincontent" ui-view="" ng-show="!card"></div>
     </div>
+    
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -47,7 +51,6 @@
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
     <!-- endbuild -->
-
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
@@ -66,13 +69,15 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         
-        <script src="scripts/controllers/sidepanel.js"></script>
+        <script src="scripts/controllers/layout.js"></script>
         <script src="scripts/controllers/list.js"></script>
         <script src="scripts/controllers/post.js"></script>
         
         <script src="scripts/services/socket.js"></script>
         <script src="scripts/services/posts.js"></script>
         <script src="scripts/services/scroll.js"></script>
+        
+        <script src="scripts/directives/navigation.js"></script>
         
         <script src="scripts/filters/slug.js"></script>
         
