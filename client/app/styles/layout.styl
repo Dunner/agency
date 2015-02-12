@@ -3,63 +3,129 @@
   width 100%
   height 100%
   transition width 0.3s
+  border 20px solid white
   &:after
     content ''
     display block
     clear both
-  &.card
-    margin 0 auto
-    width 50%!important
-  .logo
-    width 100%
-    height 200px
-    background #f00
+  & .navwrapper
     transition height 0.3s
-    &.floated
-      float left
-      width 20%
-      height 80px
+    position relative
+    width 100%
+    height 100%
+  .businesscard
+    width 100%
+    height 50%
+    postion relative
+    background #cecece
+    transition all 0.3s
+    overflow hidden
+    background-image url('http://ac85602.thg.se/Bilder/Background_2.png')
+    &:after
+      position absolute
+      bottom 0px
+      height 50%
+      width 100%
+      left 0px
+      background rgba(0,0,0,.3)
+      content ''
+      display block
   .navigation
     position relative
-    height 80px
-    &.floated
+    height 60px
+    width 100%
+    margin 0 auto
+    transition all 0.3s ease-in-out
+    &:after
+      content ''
+      display block
+      clear both
+    .minilogo
+      width 120px
+      height 100%
       float left
-      width 80%
+      transition all 0.3s ease-in-out
     nav
       position relative
       height 100%
+      width 100%
+      float left
+      transition all 0.3s ease-in-out
       &.options
         position relative
         width 100%
         display table
         height 100%
         table-layout fixed
-        border-top 1px solid #444
-        border-bottom 1px solid #444
         & > ul
           margin 0
           padding 0
           display table-row
           & > li
-            list-style none1
+            border-collapse collapse
+            list-style none
             cursor pointer
-            text-align center
             height 100%
             display table-cell
-            border-right 1px solid #444
-            background #eee
-            &:first-child
-              border-left 1px solid #444
-            & > a
-              display block
-              text-decoration none
-              color black
-              line-height 50px
-            &.active > a
-              color #00f
+            & > div
+              width 100%
+              text-align center
+              height 100%
+
 
 .maincontent
-  width 100%
-  height 100%
-  background #ebe9eb
-  
+  min-height 1000px
+  background #fff
+  padding 10px
+  border-top 0px solid #ddd
+
+.card
+  background #111
+  .navigation
+    width 50% !important
+    height 50% !important
+  nav
+    & > ul > li
+      & > div
+        border 0px !important
+        border-radius 0px !important
+        & > a
+          display block
+          text-decoration none
+          color #888
+          line-height 60px
+
+.ui
+  background-color #fff
+  & .navwrapper
+    height 60px!important
+  nav
+    width calc(100% - 120px) !important
+    & > ul > li
+      & > div
+        background linear-gradient(top, #fff, #f6f6f6)
+        border-right 2px solid #ddd
+        border-top 2px solid #ddd
+        border-bottom 2px solid #ddd
+        border-top-left-radius 5px
+        border-top-right-radius 5px
+      &:first-child > div
+        border-left 2px solid #ddd
+      & > div > a
+        display block
+        text-decoration none
+        color #888
+        line-height 60px
+      &.active > div
+        background #fff
+        border-bottom 0px
+        & > a
+          color #444
+  .businesscard
+    opacity 0
+    height 0px
+  .maincontent
+    border-right 0px solid black
+    width 100% !important
+  .active > div
+    border-top 2px solid #3293CD !important

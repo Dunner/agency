@@ -9,7 +9,11 @@
  */
 angular.module('agencyApp')
   .controller('postCtrl', function ($scope, Posts, $filter ) {
-    
+
+    Posts.query(function(response) {
+      $scope.posts = response;
+    });
+
     $scope.addPost = function() {
       if ($scope.form.name.length > 2) {
 
@@ -28,6 +32,6 @@ angular.module('agencyApp')
       }
     };
 
-    
-    
+
+
   });

@@ -8,12 +8,8 @@
  * Controller of the agencyApp
  */
 angular.module('agencyApp')
-  .controller('layoutCtrl', function ($scope) {
+  .controller('layoutCtrl', function ($scope, Layout) {
 
-    $scope.card = true;
-    $scope.changeLayout = function() {
-      $scope.card = !$scope.card;
-    };
-    
-    
+    $scope.layout = Layout.get;
+
   });

@@ -5,7 +5,7 @@
 
 <form class="post-form" ng-submit="addPost(newSound)">
     <input name="name" type="text" placeholder="Name" ng-model="form.name" autofocus="" />
-    
+
     <button type="submit" class="button button-ok">Post</button>
     <div class="button button-cancel">Cancel</div>
     <div style="clear:both"></div>
@@ -14,3 +14,8 @@
 <p style="color: red">{{error}}</p>
 
 <hr/>
+
+
+<div ng-repeat="post in posts">
+    <p>{{post.name}}</p>
+</div>

@@ -388,7 +388,7 @@ module.exports = function (grunt) {
       'stylus',
       'concurrent:server',
       'autoprefixer',
-      //'connect:livereload',
+      'connect:livereload',
       'watch'
     ]);
   });

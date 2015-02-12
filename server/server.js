@@ -4,7 +4,7 @@
   var express        = require('express');
   var fs             = require('fs');
   var app            = express();
-  var ip             = process.env.IP || '0.0.0.0';
+  var ip             = process.env.IP || 'localhost';
   var port           = process.env.PORT || 8080;
   var env            = process.env.NODE_ENV || 'development';
   var server         = require('http').createServer(app);
@@ -12,7 +12,7 @@
   var mongoose       = require('mongoose');
   var ejs            = require('ejs');
   var io             = require('socket.io').listen(server);
-  
+
   var bodyParser     = require('body-parser');
   var cookieParser   = require('cookie-parser');
   var morgan         = require('morgan');
@@ -77,10 +77,10 @@
         console.log("db connection open");
     })
   }));
-  
+
   // Populate empty DB with sample data
   //require('./config/dummy');
-  
+
   // routes ==================================================
   require('./lib/routes')(app); // configure API routes
   // socket messages ===============================================

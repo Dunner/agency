@@ -1,13 +1,27 @@
+<div ng-show="layout() === 'ui'" class="minilogo ng-hide">
+   <a ui-sref="list">L</a>
+</div>
 <nav class="options toprow">
     <ul>
-        <li>
-           <a ui-sref="list">Posts</a> 
+        <li ui-sref="card" ui-sref-active="active">
+          <div>
+            <a >Card</a>
+          </div>
         </li>
-        <li>
-           <a ui-sref="post">Add Post</a> 
+        <li ui-sref="cv" ui-sref-active="active">
+          <div>
+            <a >CV</a>
+          </div>
         </li>
-        <li ng-click="changeLayout()">
-           <a>Change</a> 
+        <li ui-sref="portfolio" ui-sref-active="active">
+          <div>
+            <a >Portfolio</a>
+          </div>
+        </li>
+        <li ui-sref="blog" ui-sref-active="active">
+          <div>
+            <a >Blog</a>
+          </div>
         </li>
     </ul>
 </div>

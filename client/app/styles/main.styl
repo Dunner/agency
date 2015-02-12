@@ -37,10 +37,11 @@ body, html
   width 100%
   height 100%
   position relative
+  overflow-x hidden
 
-/* apply a natural box layout model to all elements, but allowing components to change */
+
 html
-  box-sizing border-box
+  box-sizing border-box /* apply a natural box layout model to all elements, but allowing components to change */
   overflow auto
 
 *, *:before, *:after
@@ -100,7 +101,7 @@ ul.tripple
   content ''
   clear both
 
-.cursor 
+.cursor
   cursor pointer
 
 hr
@@ -115,7 +116,7 @@ hr.prettyline
   border 0
   height 1px
   position relative
-  margin-top 0.5em 
+  margin-top 0.5em
   &::before
     background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
     top -0.5em
@@ -134,4 +135,4 @@ hr.prettyline
 
 .editing
   outline none
-  
+

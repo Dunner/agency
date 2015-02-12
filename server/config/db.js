@@ -1,4 +1,4 @@
 // config/db.js
   module.exports = {
-    url : 'mongodb://'+ process.env.IP +'/test'
+    url : 'mongodb://localhost/agency' //'+ process.env.IP +'
   }
