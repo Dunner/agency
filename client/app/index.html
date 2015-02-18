@@ -16,8 +16,7 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/stylus.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin+Slab">
     <!-- endbuild -->
   </head>
   <body ng-app="agencyApp">
@@ -29,10 +28,21 @@
 
     <div class="wrapper" ng-controller="layoutCtrl" ng-class="{card:layout() === 'card', ui:layout() === 'ui'}">
       <div class="navwrapper">
-        <div class="businesscard">{{layout()}}</div>
+        <div class="businesscard">
+          <div class="logo-description">
+            <div class="logo">
+              Jonathan Hägglund
+              <hr/>
+            </div>
+            <div class="description">
+              <h3>LORUMADO IPSUMO</h3>
+              <h3>IPSUMO LORUMADO</h3>
+            </div>
+          </div>
+        </div>
         <div ng-navigation class="navigation"></div>
+        <div class="maincontent" ui-view="" ng-show="layout() !== 'card'"></div>
       </div>
-      <div class="maincontent" ui-view="" ng-show="layout() !== 'card'"></div>
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

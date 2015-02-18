@@ -4,6 +4,7 @@
   height 100%
   transition width 0.3s
   border 20px solid white
+  overflow hidden
   &:after
     content ''
     display block
@@ -13,23 +14,39 @@
     position relative
     width 100%
     height 100%
+    border 1px solid black
   .businesscard
     width 100%
     height 50%
+    display table
     postion relative
-    background #cecece
     transition all 0.3s
     overflow hidden
-    background-image url('http://ac85602.thg.se/Bilder/Background_2.png')
-    &:after
-      position absolute
-      bottom 0px
-      height 50%
-      width 100%
-      left 0px
-      background rgba(0,0,0,.3)
-      content ''
-      display block
+    .logo-description
+      display table-cell
+      vertical-align middle
+      text-align center
+      .logo
+        margin 0 auto
+        display inline-block
+        width auto
+        font-family 'Josefine Slab', serif
+        font-size 32px
+        transition font-size 0.3s
+        for i in (0..6)
+          qWidth = (600 + (200 * i))px
+          fSize = (40 + (12 * i))px
+          @media (min-width qWidth)
+            font-size fSize
+            line-height fSize
+        > hr
+          margin 0 auto 40px auto
+          width 90%
+          background #000
+          height 0px
+      .description
+        margin 0 auto
+        text-align center
   .navigation
     position relative
     height 60px
@@ -74,16 +91,12 @@
 
 
 .maincontent
-  min-height 1000px
-  background #fff
   padding 10px
-  border-top 0px solid #ddd
 
 .card
-  background #111
   .navigation
     width 50% !important
-    height 50% !important
+    background-color #FEF36D
   nav
     & > ul > li
       & > div
@@ -96,36 +109,19 @@
           line-height 60px
 
 .ui
-  background-color #fff
-  & .navwrapper
-    height 60px!important
   nav
     width calc(100% - 120px) !important
     & > ul > li
-      & > div
-        background linear-gradient(top, #fff, #f6f6f6)
-        border-right 2px solid #ddd
-        border-top 2px solid #ddd
-        border-bottom 2px solid #ddd
-        border-top-left-radius 5px
-        border-top-right-radius 5px
-      &:first-child > div
-        border-left 2px solid #ddd
       & > div > a
         display block
         text-decoration none
-        color #888
+        color #333
         line-height 60px
       &.active > div
-        background #fff
-        border-bottom 0px
+        border-top 2px solid #3293CD !important
         & > a
           color #444
   .businesscard
     opacity 0
     height 0px
-  .maincontent
-    border-right 0px solid black
-    width 100% !important
-  .active > div
-    border-top 2px solid #3293CD !important
+    display block
