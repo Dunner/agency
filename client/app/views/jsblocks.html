@@ -1,0 +1,18 @@
+
+
+<input type="number" ng-model="gridwidth" ng-change="update()"></input>
+<div ng-blocks>
+  <div class="tblock"
+       ng-repeat="block in blocks"
+       data-id="{{block.id}}">
+    <div class="info">
+     <p>id: {{block.id}}</p>
+     <p>priority: {{block.priority}}</p>
+     <div class="label">Priority
+       <div class="minibutton" ng-click="moveDown(block.id)">-</div>
+       <div class="minibutton" ng-click="moveUp(block.id)">+</div>
+     </div>
+   </div>
+   <div class="drag-size" ng-mousedown="changeSize(block.id, true)" ng-mouseup="changeSize(block.id, false)"></div>
+  </div>
+</div>

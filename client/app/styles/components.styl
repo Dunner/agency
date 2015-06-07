@@ -1,0 +1,103 @@
+$lines = rgba(0,0,0,.06)
+// $lines = rgba(250,0,0,1)
+
+.blockgroup
+  position relative
+
+.animate
+  transition top 0.3s ease-in-out, left 0.3s ease-in-out
+
+.tblock
+  border 2px solid $lines
+  position absolute
+  overflow hidden
+  padding 15px
+  &:hover > .info
+    display block!important
+  & *
+    font-size 12px
+    line-height 14px
+    color #999
+  & .info
+    width 100%
+    height 100%
+    position relative
+    display none
+    & .label
+      width 150px
+      padding-top 4px
+      &:after
+        display block
+        content ''
+        clear both
+    & .minibutton
+      float right
+      border 1px solid $lines
+      padding 0 8px
+      background rgba(0,0,0,.06)
+      cursor pointer
+      color #fff
+      font-style bold
+      &:hover
+        background rgba(0,0,0,.2)
+    & > .move-btn
+      width 50%
+      float left
+      text-align center
+      padding 5px
+      cursor pointer
+  & .drag-up
+    position absolute
+    top 0px
+    left 5px
+    width calc( 100% - 10px )
+    height 5px
+    background black
+    cursor n-resize
+    user-select none
+  & .drag-size
+    position absolute
+    bottom 0px
+    right 0px
+    width 5px
+    background black
+    height 5px
+    cursor se-resize
+    user-select none
+  & .move-block
+    position absolute
+    top 0px
+    left 0px
+    width 5px
+    background black
+    height 5px
+    cursor se-resize
+    user-select none
+
+.block
+  border 1px solid $lines
+  min-width 100%
+  max-width 100%
+  min-height 240px
+  float left
+  for i in (1..8)
+    qWidth = (200 + (200 * i))px
+    sWidth = (200 + (200 * i))
+    sSize = (100 / i)%
+    @media (min-width qWidth)
+      min-width sSize
+
+for a in (1..8)
+  qWidth = (200 + (200 * a))px
+  sSize = (100 / a)%
+  @media (min-width qWidth)
+    for b in (1..8)
+      blockw = (sSize * b)%
+      blockh = (240 * b)px
+      .horizontal-{b}
+        width blockw
+      .vertical-{b}
+        height blockh
+
+.expand
+  height auto !important

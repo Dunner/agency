@@ -1,10 +1,29 @@
+$bg = #e5e5e5
+$lines = rgba(0,0,0,.06)
+
+
+body
+  background-image linear-gradient(0deg,$lines 1pt,transparent 0px)
+  background-size 100% 240px
+  background-color $bg
+
+.manager
+  width 20%
+  float left
+  height 100%
+  border-right 1px solid black
+  background #222
+  color white
+
 .wrapper
   position relative
-  width 100%
+  width 80%
   height 100%
   transition width 0.3s
-  border 20px solid white
-  overflow hidden
+  overflow-x hidden
+  overflow-y scroll
+  padding 0 80px
+  float left
   &:after
     content ''
     display block
@@ -14,7 +33,12 @@
     position relative
     width 100%
     height 100%
-    border 1px solid black
+    // background-image linear-gradient($lines 1pt,transparent 0px),linear-gradient(90deg,$lines 1pt,transparent 0px) //pt because px weird x-browsers
+    // for i in (1..8)
+    //   qWidth = (200 + (200 * i))px
+    //   sSize = (100 / i)%
+    //   @media (min-width qWidth)
+    //     background-size sSize 240px, sSize 240px
   .businesscard
     width 100%
     height 50%
@@ -33,8 +57,8 @@
         font-family 'Josefine Slab', serif
         font-size 32px
         transition font-size 0.3s
-        for i in (0..6)
-          qWidth = (600 + (200 * i))px
+        for i in (0..7)
+          qWidth = (400 + (200 * i))px
           fSize = (40 + (12 * i))px
           @media (min-width qWidth)
             font-size fSize
@@ -90,8 +114,6 @@
               height 100%
 
 
-.maincontent
-  padding 10px
 
 .card
   .navigation

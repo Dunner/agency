@@ -44,7 +44,7 @@ angular
     $stateProvider
 
       .state('card', {
-        url: '/',
+        url: '/card',
         templateUrl: 'views/card.html',
         controller: 'cardCtrl',
         layout: 'card'
@@ -61,8 +61,24 @@ angular
         //controller: 'cardCtrl',
         layout: 'card'
       })
-
-
+      .state('cssblocks', {
+        url: '/cssblocks',
+        templateUrl: 'views/cssblocks.html',
+        //controller: 'cardCtrl',
+        layout: 'card'
+      })
+      .state('jsblocks', {
+        url: '/',
+        templateUrl: 'views/jsblocks.html',
+        //controller: 'cardCtrl',
+        layout: 'card'
+      })
+      .state('jsblocks2', {
+        url: '/b2',
+        templateUrl: 'views/jsblocks2.html',
+        //controller: 'cardCtrl',
+        layout: 'card'
+      })
       .state('blog', {
         url: '/post',
         templateUrl: 'views/post.html',
